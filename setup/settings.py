@@ -29,8 +29,8 @@ SECRET_KEY = str(os.getenv("SECRET_KEY"))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-ALLOWED_HOSTS = ['.vercel.app','127.0.0.1']
+# api/settings.py
+ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
 
 
 # Application definition
@@ -72,7 +72,12 @@ TEMPLATES = [
     },
 ]
 
+#ORIGINAL
 WSGI_APPLICATION = 'setup.wsgi.application'
+
+#VERCEL
+# api/settings.py
+#WSGI_APPLICATION = 'api.wsgi.app'
 
 
 # Database
@@ -110,7 +115,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'pt-br'
 
-TIME_ZONE = 'America/Sao Paulo'
+TIME_ZONE = 'America/Sao_Paulo'
 
 USE_I18N = True
 
