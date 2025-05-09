@@ -17,4 +17,4 @@ application = get_wsgi_application()
 
 #VERCEL
 # api/wsgi.py
-app = get_wsgi_application()
+app = application
