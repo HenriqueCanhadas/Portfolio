@@ -15,6 +15,7 @@
             <a href="#contact">Contato</a>
         </nav>
     </header>
+    
     <!-- home section design -->
     <section class="home" id="home">
         <div class="home-content">
@@ -99,8 +100,8 @@
             <div class="portfolio-box">
                 <img src="{% static 'assets/imagens/projetos/portfolio1.jpg' %}" alt="">
                 <div class="portfolio-layer">
-                    <h4>Wed design</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, quisquam.</p>
+                    <h4>Certificados</h4>
+                    <p>Alguns certificados que possuo ao longo da minha jornada.</p>
                     <a href="{% url 'certificado' %}"><i class='bx bx-link-external'></i></a>  
                 </div>
             </div>
@@ -168,12 +169,5 @@
             <input type="submit" value="Enviar mensagem" class="btn">
         </form>
     </section>
-
-    <!-- scrool reveal -->
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <!-- typed js -->
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <!-- custom js -->
-    <script src="{% static 'styles/js/script.js' %}"></script>
 
 {% endblock %}
