@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: portfolio-django
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn setup.wsgi
+    envVars:
+      - key: SECRET_KEY
+        value: django-insecure-_&5yy!&o0cv2nw0jna(-d-%)e)vv8c!#+6q3eoy_&i-*t!0lug
+      - key: DEBUG
+        value: False
+      - key: DJANGO_SETTINGS_MODULE
+        value: setup.settings
