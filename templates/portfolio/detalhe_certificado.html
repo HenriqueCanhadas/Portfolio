@@ -1,0 +1,23 @@
+{% extends 'portfolio/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <header class="header">
+        <a href="#" class="logo">Portfólio</a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="{% url 'index' %}" class="active">Home</a>
+        </nav>
+    </header>
+
+    <section class="portfolio" id="home"></section>
+        <a href="{% url 'certificado' %}">
+            <h2>{{ programacao.linguagem }}</h2>
+            <p>{{ programacao.legenda }}</p>
+        </a>
+    </div>
+</section>
+{%endblock%}
+

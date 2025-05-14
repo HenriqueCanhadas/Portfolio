@@ -1,0 +1,39 @@
+{% extends 'portfolio/base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <header class="header">
+        <a href="#" class="logo">Portfólio</a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="{% url 'index' %}" class="active">Home</a>
+        </nav>
+    </header>
+
+    <!-- portfolio section design -->
+    <section class="portfolio" id="home">
+        <h2 class="heading"><span>Certificados</span></h2>
+        <div class="portfolio-container">
+            {% if cards %}
+            {% for programacao in cards%}
+            <div class="portfolio-box">
+                {% if programacao.imagem == '' or programacao.imagem == null %}
+                    <img src="{% static 'assets/imagens/not-found.png'%}" alt="Imagem">
+                {% else %}
+                    <img src="{{ programacao.imagem.url}}" alt="Imagem">
+                {% endif %}
+                <div class="portfolio-layer">
+                    <h4>{{programacao.linguagem}}</h4>
+                    <p>{{programacao.legenda}}</p>
+                    <a href="{% url 'detalhe_certificado' programacao.linguagem %}"><i class='bx bx-link-external'></i></a>  
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <h1>Esta Vazio</h1>
+            {% endif %}
+        </div>
+    </section>
+
+{% endblock %}
