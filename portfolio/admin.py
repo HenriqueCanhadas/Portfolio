@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from portfolio.models import Programacao
+from portfolio.models import Modulo, Programacao
 
 class ListandoProgramacoes(admin.ModelAdmin):
     list_display = ("id", "linguagem", "legenda", "publicada")
@@ -11,3 +11,5 @@ class ListandoProgramacoes(admin.ModelAdmin):
     ordering = ['id']
 
 admin.site.register(Programacao, ListandoProgramacoes)
+
+admin.site.register(Modulo)

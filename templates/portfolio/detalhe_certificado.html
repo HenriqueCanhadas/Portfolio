@@ -11,13 +11,22 @@
             <a href="{% url 'index' %}" class="active">Home</a>
         </nav>
     </header>
-
-    <section class="portfolio" id="home"></section>
-        <a href="{% url 'certificado' %}">
-            <h2>{{ programacao.linguagem }}</h2>
-            <p>{{ programacao.legenda }}</p>
-        </a>
+    
+    <section class="home" id="home"></section>
+    <div class="home-content">
+       <!-- <a href="{% url 'certificado' %}"> -->
+        <h3>{{ programacao.linguagem }}</h3>
+        <p>{{ programacao.legenda }}</p>
+        <ul>
+            {% for modulo in programacao.modulos.all %}
+              <li>
+                <a href="{{ modulo.link }}" target="_blank">
+                  {{ modulo.titulo }}
+                </a>
+              </li>
+            {% endfor %}
+        </ul>
     </div>
-</section>
+    </section>
 {%endblock%}
 
